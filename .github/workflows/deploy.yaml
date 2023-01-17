@@ -33,6 +33,9 @@ jobs:
         files: ${{ env.RESOURCE_PATH }}
       env:
         override.value: ${{ secrets.DI_FROM_SECRET }}
+        spring.datasource.url: ${{secrets.RDS_HOST}}
+        spring.datasource.username: ${{secrets.RDS_USERNAME}}
+        spring.datasource.password: ${{secrets.RDS_PASSWORD}}
 
 # gradle로 빌드를하기 위한 gradlew에 권한 부여
   - name: Grant execute permission for gradlew
